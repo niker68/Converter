@@ -1,5 +1,4 @@
-#Converter
-
+# Converter
 
 ## Правила конвертации
 Правила конвертации находят в [файле](https://github.com/niker68/Converter/blob/master/file.csv) в формате [CSV](https://en.wikipedia.org/wiki/Comma-separated_values):
