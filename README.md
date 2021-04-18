@@ -1,5 +1,20 @@
 # Converter
 
+### Требуемое ПО
+
+Для сборки и запуска проекта требуются:
+- [Java 11 (Open JDK)](https://openjdk.java.net/projects/jdk/11/)
+- [Apache Maven 3.3+](https://maven.apache.org/)
+
+Для развертывания приложения используется механизм контейнеризации:
+- [Docker](https://www.docker.com/)
+
+### Запуск приложения
+
+Для запуска приложения необходимо:
+1. Скомпилировать и собрать проект: mvn clean package
+2. Запустить создание образов и контейнеров приложения: docker-compose up -d
+
 ## Правила конвертации
 Правила конвертации находят в [файле](https://github.com/niker68/Converter/blob/master/file.csv) в формате [CSV](https://en.wikipedia.org/wiki/Comma-separated_values):
 ```csv
