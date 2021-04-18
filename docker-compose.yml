@@ -1,0 +1,8 @@
+version: '3.1'
+services:
+  app:
+    container_name: Converter
+    image: Converter
+    build: ./
+    ports:
+      - "8888:8888"
