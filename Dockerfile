@@ -2,9 +2,9 @@ FROM adoptopenjdk/openjdk11
 
 RUN apt-get clean && apt-get update
 
-WORKDIR /app
+WORKDIR app/
 
-COPY target/*.jar /app/Converter-1.0-SNAPSHOT.jar
+COPY . .
 
 EXPOSE 8888
-ENTRYPOINT ["java","-jar","/app/Converter-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","target/Converter-1.0.0-jar-with-dependencies.jar"]

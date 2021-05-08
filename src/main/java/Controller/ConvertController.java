@@ -126,24 +126,8 @@ public class ConvertController implements HttpHandler {
             }
         }
         else if ("GET".equals(httpExchange.getRequestMethod())) {
-            String path = new File("").getAbsolutePath() +"\\src\\main\\webapp\\WEB-INF\\pages\\index.html";
             StringBuilder string = new StringBuilder();
-            try(FileReader reader = new FileReader(path))
-            {
-                char[] buf = new char[256];
-                int c;
-                while((c = reader.read(buf))>0){
 
-                    if(c < 256){
-                        buf = Arrays.copyOf(buf, c);
-                    }
-                    string.append(buf);
-                }
-            }
-            catch(IOException ex){
-
-                System.out.println(ex.getMessage());
-            }
 
 
             htmlResponse = string.toString();

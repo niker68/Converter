@@ -5,16 +5,32 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>universal-converter</artifactId>
+    <artifactId>Converter</artifactId>
     <version>1.0.0</version>
 
     <properties>
-        <project.build.sourceEncoding>cp1251</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>cp1251</project.reporting.outputEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
+
 
     <build>
         <plugins>
+            <plugin>
+                <!-- Build an executable JAR -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>Application.ConverterApplication</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -22,7 +38,7 @@
                 <configuration>
                     <source>11</source>
                     <target>11</target>
-                    <encoding>Cp1251</encoding>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
 	<plugin>
@@ -33,7 +49,7 @@
                 <archive>
                     <manifest>
                         <addClasspath>true</addClasspath>
-                        <mainClass>ConverterApplication</mainClass>
+                        <mainClass>Application.ConverterApplication</mainClass>
                     </manifest>
                 </archive>
                 <descriptorRefs>
@@ -55,7 +71,16 @@
 
     <!-- https://mvnrepository.com/artifact/org.json/json -->
     <dependencies>
-    <dependency>
+        <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
+        <!-- https://mvnrepository.com/artifact/au.com.bytecode/opencsv -->
+        <dependency>
+            <groupId>au.com.bytecode</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+
+        <dependency>
         <groupId>org.json</groupId>
         <artifactId>json</artifactId>
         <version>20210307</version>
